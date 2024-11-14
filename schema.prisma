@@ -11,4 +11,5 @@ model Card {
   id        String      @id
   name      String
   type       String
+  mode      Int
 }

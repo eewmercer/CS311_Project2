@@ -114,3 +114,19 @@
     color: white;
   }
 }
+
+.add-card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  font-size: 25px;
+
+  button {
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color:  rgb(176, 138, 181);
+    color: white;
+  }
+}

@@ -1,20 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 import styles from './styles/CardTemplate.module.scss'
 const prisma = new PrismaClient();
+import All_Cards from './Components/All_Cards'
 
 export default async function Home() {
   const cards = await prisma.card.findMany();
-
-  function cardLayout() {
-    return cards.map((card, index) => {
-      return <div key={index} className={styles.cardTemplate}>
-        <h3 id="card-id">{card.name}</h3>
-        <div className="percent-understood">
-          <p>%</p>
-        </div>
-      </div>
-    }) 
-  }
 
   return (
     <main className="main-container">
@@ -33,7 +23,9 @@ export default async function Home() {
       </div>
       <h1>Review All Cards</h1>
       <div className="all-cards">
-        {cardLayout()}
+        <All_Cards
+          cards = {cards}
+        />
       </div>
     </main>
   );

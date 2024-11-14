@@ -2,13 +2,14 @@
 
 import React, { useState } from 'react'
 import styles from '../styles/CardTemplate.module.scss'
+import { PrismaClient } from "@prisma/client";
+import {percentUnderstood} from '../../../App'
+const prisma = new PrismaClient();
 
 export default function Card_Template({cards}) {
   const [counter, setCounter] = useState(0)
   const [pokemonCard, setPokemonCard] = useState(cards[counter].name)
-  const [easyMode, setEasyMode] = useState()
-  const [mediumMode, setMediumMode] = useState()
-  const [hardMode, setHardMode] = useState()
+  const [percentage, setPercentage] = useState(0)
 
   const flipCard = () => {
     if (pokemonCard === cards[counter].name) {
@@ -18,11 +19,13 @@ export default function Card_Template({cards}) {
     }
   }
 
+  console.log(cards)
+
   function displayIndividualFlashcard() {
     return <div onClick={flipCard} className={styles.cardTemplate}>
       <div id="card-id" dangerouslySetInnerHTML={{ __html: pokemonCard }}></div>
       <div className="percent-understood">
-        <p>%</p>
+        <p id='mode' dangerouslySetInnerHTML={{ __html: percentage }}></p>
       </div>
     </div>
   }
@@ -35,15 +38,6 @@ export default function Card_Template({cards}) {
     }
   }
 
-  function percentUnderstood(percent) {
-
-  }
-
-  // TODO:
-  // - click easy/medium/hard button to update the individual card
-  // - the card's updates: % for amount understood AND scheduled time
-  // easy = 75% + 20s / medium = 50% + 15s / hard = 20% + 10s
-
   return (
     <main>
       <div className='cards-display'>
@@ -54,9 +48,9 @@ export default function Card_Template({cards}) {
         <p>How difficult is this card?</p>
       </div>
       <div className='level-buttons'>
-        <button onClick={percentUnderstood(.75)} className='easy'>Easy</button>
-        <button onClick={percentUnderstood(.5)} className='medium'>Medium</button>
-        <button onClick={percentUnderstood(.25)} className='hard'>Hard</button>
+        <button onClick={percentUnderstood(cards, 75, counter)} className='easy'>Easy</button>
+        <button onClick={percentUnderstood(cards, 50, counter)} className='medium'>Medium</button>
+        <button onClick={percentUnderstood(cards, 25, counter)} className='hard'>Hard</button>
       </div>
     </main>
   )
