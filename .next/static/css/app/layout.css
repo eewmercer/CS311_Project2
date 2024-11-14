@@ -1,0 +1,119 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-container {
+  display: flex;
+  justify-content: center;  
+  flex-direction: column;
+  padding: 25px;
+  background-color: rgb(176, 138, 181);
+
+  h1 {
+    font-size: 35px;
+  }
+
+  nav {
+    display: flex;
+    gap: 100px;
+    margin-top: 25px;
+    font-size: 25px;
+  }
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;  
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+
+  h1 {
+    margin: 25px;
+  }
+}
+
+.link-styles:hover {
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+.description {
+  font-size: 25px;
+  width: 50%;
+  line-height: 2;
+}
+
+.all-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.percent-understood {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+}
+
+.level-buttons {
+  display: flex;
+  margin: 25px;
+  margin-bottom: 50px;
+  justify-content: center;
+  gap: 25px;
+
+  button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+  }
+}
+
+.easy {
+  background-color: rgb(140, 207, 140);
+}
+
+.medium {
+  background-color: rgb(248, 248, 90);
+}
+
+.hard {
+  background-color: rgb(231, 95, 95);
+}
+
+.difficulty-description {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.cards-display {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  button {
+    padding: 20px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: none;
+    background-color:  rgb(176, 138, 181);
+    color: white;
+  }
+}
